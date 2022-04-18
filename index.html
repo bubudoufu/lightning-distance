@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>簡易かみなり距離測定アプリ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+  <section class="hero is-info">
+    <!-- ヘッダ -->
+    <div class="hero-head">
+      <header class="navbar is-primary">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item is-size-4" href="https://bubudoufu.com/webapp/">
+              bubudoufu.com
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- メインコンテンツ -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-4">
+          <i class="fa-solid fa-cloud-bolt has-text-warning"></i>
+          簡易かみなり距離測定アプリ
+        </h1>
+
+        <div class="content">
+          <div class="block">
+            <button id="startBtn" class="button is-primary is-medium" onclick="start()">
+              START
+            </button>
+          </div>
+          <div class="block">
+            <button id="stopBtn" class="button is-primary is-medium" disabled onclick="stop()">
+              STOP
+            </button>
+          </div>
+          <div class="block">
+            <button id="resetBtn" class="button is-link is-medium" disabled onclick="reset()">
+              RESET
+            </button>
+          </div>
+        </div>
+
+        <div class="content  is-size-5">
+          <span class="icon">
+            <i class="fas fa-clock"></i>
+          </span>
+          <span id="time" class="">0秒</span>
+          <span class="icon">
+            <i class="fas fa-ruler"></i>
+          </span>
+          <span id="distance" class="">約0m</span>
+        </div>
+
+        <div class="content is-small has-text-black">
+          <span class="icon">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          <span>使い方</span>
+          <p>雷が光ってから音が聞こえるまでの時間差から距離を計算するアプリです（音速340m/sで計算）。雷が光ったらSTARTボタン、雷が鳴ったらSTOPボタンを押してください。</p>
+        </div>
+      </div>
+    </div>
+    <!-- フッター -->
+    <div class="hero-foot">
+      <nav class="tabs is-right is-small">
+        <div class="container">
+          <ul>
+            <li><a href="https://www.jma.go.jp/bosai/nowc/">気象庁の雷ナウキャスト</a></li>
+            <li><a href="https://weather.yahoo.co.jp/weather/zoomradar/lightning/">Yahoo!天気雷レーダー</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>
